@@ -1,0 +1,15 @@
+/* Image */
+.img-response{max-width: 100%; display: block; margin: 0 auto;}
+
+/*Container*/
+.container{padding: 0 15px;}
+
+@media (min-width: 562px){
+	.container{max-width: 542px;}
+}
+@media (min-width: 768px){
+	.container{max-width: 748px;}
+}
+@media (min-width: 992px){
+	.container{max-width: 925px;}
+}
