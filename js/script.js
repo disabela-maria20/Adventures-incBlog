@@ -2,29 +2,36 @@ async function puxarDados(){
 	try{
 		const response = await fetch("https://radioprotecaonapratica.com.br/wp-json/wp/v2/posts?_embed")
 		const api = await response.json()
-
-		show(api)
-	
+		Show(api)
 	}catch(erro){
 		return erro
 	}
 }
 puxarDados()
 
-function show(blog){
-	console.log(blog)
+function Show(blog){
 	// Busca o titulo 
-	let src = ''
-	let dadosTitle = ' '
+	let dadosTitle = ''
 	for (let dados of blog) {
-		
-		dadosTitle += `<h3>${dados.title.rendered}</h3>
-						   ${dados.excerpt.rendered}
-						<span>${dados.date}</span>
-						<span>${dados._embedded.author[0].name}</span>	
-						<img src="${dados._embedded['wp:featuredmedia'][0].source_url}" /> `
-					  
-	
-	}
+		// Data no padão dd/mm/aaaa
+		let data = dados.date
+		let ano = data.slice(0,4)
+		let mes = data.slice(5,7) 
+		let dia = data.slice(8,10)
+		dadosTitle += `	
+		<span>${dia}/${mes}/${ano}</span>
+		<div class="cardBody">
+			<div class="cardTitle"> 
+				<h3>${dados.title.rendered}</h3>
+				<p>Autor<span> ${dados._embedded.author[0].name}</span></p>
+			</div>
+			<img src="${dados._embedded['wp:featuredmedia'][0].source_url}" class="img-response"/>
+			<div class="cardText">
+				${dados.excerpt.rendered}
+				<a href="${dados.link}">Ler+</a>
+			</div>
+		</div>`
+	} 
 	document.querySelector('#card').innerHTML = dadosTitle
 }
+
