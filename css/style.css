@@ -8,27 +8,32 @@
 .card {}
 .card span {display: block; text-align: end; color: #777; margin-bottom: 10px; font-size: 0.9em;}
 .card span i {margin: 0px 8px 2px 0px;}
-.card .cardBody {margin-bottom: 20px; box-shadow: 0 0 2px 1px #ccc;}
+.card .cardBody {margin-bottom: 20px; -webkit-box-shadow: 0 0 2px 1px #ccc; box-shadow: 0 0 2px 1px #ccc;}
 .card .cardBody h3 {font-size: 1.1em; font-weight: bold;padding: 10px 10px 5px;}
 .card .cardBody .cardText {padding: 10px 10px 15px;;}
 .card .cardBody .cardText p {font-size: 15px; margin-bottom: 15px;}
-.card .cardBody .cardText a {color: #fff; background: #f99703; padding: 5px 12px; transition: all .4s;}
+.card .cardBody .cardText a {color: #fff; background: #f99703; padding: 5px 12px; -webkit-transition: all .4s; -o-transition: all .4s; transition: all .4s;}
 .card .cardBody .cardText a:hover{ background: #ffae00;}
 .card .cardBody .cardTitle p {margin-bottom: 10px; padding: 5px 10px 5px; font-size: 14px;}
 .card .cardBody .cardTitle p span{color: #64652b; display: inline; font-size: 14px;position: relative; top: -2px;}
 
 /*Grid*/
-.gridContainer {display: grid; grid-template-columns: 1fr; grid-template-rows: 1fr; gap: 20px 20px; margin: 15px 0;}
+.gridContainer {display: -ms-grid;display: grid; -ms-grid-columns: 1fr; grid-template-columns: 1fr; -ms-grid-rows: 1fr; grid-template-rows: 1fr; gap: 20px 20px; margin: 15px 0;}
+.gridContainer > *:nth-child(1) {-ms-grid-row: 1;-ms-grid-column: 1;}
 
 
 /*Form*/
-.form-search {box-shadow: 0 0 2px 1px #ccc; padding: 15px; display: flex;}
+.form-search {-webkit-box-shadow: 0 0 2px 1px #ccc;box-shadow: 0 0 2px 1px #ccc; padding: 15px; display: -webkit-box; display: -ms-flexbox; display: flex;}
 .form-search input[type=text] {width: 100%; height: 36px; border: 1px solid #ccc; border-radius: 0;padding-left: 10px;}
+.form-search input[type=text]::-webkit-input-placeholder{color: #ccc;}
+.form-search input[type=text]::-moz-placeholder{color: #ccc;}
+.form-search input[type=text]:-ms-input-placeholder{color: #ccc;}
+.form-search input[type=text]::-ms-input-placeholder{color: #ccc;}
 .form-search input[type=text]::placeholder{color: #ccc;}
 .form-search button { background: #f99703; padding: 10px 20px; border: none; height: 36px;color: #fff;}
 
 /*Sobre Nos e Mais lidos*/
-.sobreNos, .maisLidos {box-shadow: 0 0 2px 1px #ccc;padding: 15px; margin-top: 25px;}
+.sobreNos, .maisLidos {-webkit-box-shadow: 0 0 2px 1px #ccc;box-shadow: 0 0 2px 1px #ccc;padding: 15px; margin-top: 25px;}
 .sobreNos h4, .maisLidos h4 {font-size: 1.2em; font-weight: bold; margin-bottom: 10px;}
 .sobreNos p {font-size: 14px; line-height: 20px;}
 .maisLidos ul li {margin: 10px 20px;list-style-type: disclosure-closed ;}
@@ -41,7 +46,7 @@ footer {background: #333;}
 footer p { text-align: center; color: #fff; padding: 10px 0;}
 @media (min-width: 562px){
 	/*Grid*/
-	.gridContainer {grid-template-columns: 1fr;}
+	.gridContainer {-ms-grid-columns: 1fr;grid-template-columns: 1fr;}
 
 	/*Container*/
 	.container{max-width: 542px;}
@@ -49,7 +54,7 @@ footer p { text-align: center; color: #fff; padding: 10px 0;}
 
 @media (min-width: 768px){
 	/*Grid*/
-	.gridContainer {grid-template-columns: 2fr 1fr;}
+	.gridContainer {-ms-grid-columns: 2fr 1fr;grid-template-columns: 2fr 1fr;}
 	
 	/*Container*/
 	.container{max-width: 748px;}
