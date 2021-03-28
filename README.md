@@ -4,7 +4,7 @@
 - Javascrip
 
 # Como Executar
-- Faça o donload em sua maquina
+- Realize o download da branch `master` em sua maquina
 - Descompacte o arquivo
 - Abra a o arquivo index.html no seu navegador
-- Ou visualise em 
+- Ou visualise em https://disabela-maria20.github.io/Adventures-incBlog/
